@@ -1,0 +1,97 @@
+*{
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilos para el cuerpo de la página */
+body {
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+}
+
+/* Estilos generales del navbar */
+.navbar {
+    background: radial-gradient(circle at 10% 20%, rgb(69, 86, 102) 0%, rgb(34, 34, 34) 90%);
+    height: 80px;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 20px;
+    align-items: center;
+}
+
+/* Estilos del texto a la izquierda */
+.navbar-left {
+    font-size: 1.5rem;
+}
+
+/* Estilos de los enlaces a la derecha */
+.navbar-right {
+    display: flex;
+    align-items: center;
+}
+
+/* Estilos de los enlaces de navegación */
+.navbar-link {
+    text-decoration: none;
+    color: #fff;
+    margin-right: 20px;
+    font-size: 1rem;
+}
+
+.navbar-logo {
+    text-decoration: none;
+    color: #fff;
+    margin-right: 20px;
+}
+
+/* Estilos para el enlace de cerrar sesión */
+.logout-link {
+    display: flex;
+    align-items: center;
+}
+
+/* Estilos para el ícono de cerrar sesión */
+.icon {
+    font-size: 1.2rem;
+    margin-right: 5px;
+}
+
+.titulo{
+    font-size: 50px;
+    font-weight: 300;
+    text-align: center;
+margin: 2rem;
+}
+
+h2{
+    text-align: center;
+    margin: 2rem;
+    font-weight: 400;
+}
+
+button {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background-color 0.3s ease-in-out;
+}
+
+a{
+    text-decoration: none;
+    color: white;
+}
+
+.contenedor-boton{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

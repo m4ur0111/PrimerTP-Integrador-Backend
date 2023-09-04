@@ -1,0 +1,128 @@
+*{
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilos generales del navbar */
+.navbar {
+    background: radial-gradient(circle at 10% 20%, rgb(69, 86, 102) 0%, rgb(34, 34, 34) 90%);
+    height: 80px;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 20px;
+    align-items: center;
+}
+
+/* Estilos del texto a la izquierda */
+.navbar-left {
+    font-size: 1.5rem;
+}
+
+/* Estilos de los enlaces a la derecha */
+.navbar-right {
+    display: flex;
+    align-items: center;
+}
+
+/* Estilos de los enlaces de navegación */
+.navbar-link {
+    text-decoration: none;
+    color: #fff;
+    margin-right: 20px;
+    font-size: 1rem;
+}
+
+.navbar-logo {
+    text-decoration: none;
+    color: #fff;
+    margin-right: 20px;
+}
+
+/* Estilos para el enlace de cerrar sesión */
+.logout-link {
+    display: flex;
+    align-items: center;
+}
+
+/* Estilos para el ícono de cerrar sesión */
+.icon {
+    font-size: 1.2rem;
+    margin-right: 5px;
+}
+
+h1 {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 40px;
+    font-weight: 300;
+}
+
+.productos {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    margin: 2rem;
+}
+
+.producto {
+    max-width: 300px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.producto:hover {
+    transform: scale(1.03);
+}
+
+.producto-imagen {
+    max-width: 100%;
+    height: auto;
+}
+
+.producto-nombre {
+    font-size: 20px;
+    margin: 10px 0;
+}
+
+.producto-descripcion {
+    margin: 10px 0;
+}
+
+.producto-precio {
+    font-weight: bold;
+    color: #333;
+}
+
+.producto-categoria {
+    font-style: italic;
+    color: #666;
+}
+
+.agregar-carrito {
+    background-color: #0074D9;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.agregar-carrito:hover {
+    background-color: #0056b3;
+}
+
+p {
+    text-align: center;
+}

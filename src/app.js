@@ -1,33 +1,53 @@
 const express = require('express');
-const productsRouter = require('./routes/products');
-const cartsRouter = require('./routes/carts')
+const mongoose = require('mongoose');
+const path = require('path');
 
 const app = express();
+const http = require('http').createServer(app);
+const io = require('socket.io')(http);
+const session = require('express-session');
+const cookieParser = require('cookie-parser');
+
+//Configuración del puerto
 const PORT = 8080;
 
-//Middlewares
-app.use(express.json()); 
+//Configuración de Express
+app.set("view engine", "hbs");
+app.set("views", path.join(__dirname, "views"));
+app.use(express.static(path.join(__dirname, "views")));
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json())
 
-app.use('/api/products', productsRouter);
-app.use('/api/carts', cartsRouter)
+//Configura el middleware de cookie-parser
+app.use(cookieParser());
 
-//Ruta general
-app.get('/', (req, res) => {
-    res.send('Bienvenido a la primer preentrega');
+// Configura express-session
+app.use(session({
+    secret: 'clave-secreta-de-mis-cookies', // Cambia esto por una cadena de secreto más segura
+    resave: false,
+    saveUninitialized: true,
+}));
+
+//Conexion a la base de datos
+mongoose.connect('mongodb+srv://mauro:admin519070@ecommerce.w3ewem0.mongodb.net/ecommerce', {
+}).then(() => {
+    console.log("Conectado a la base de datos")
+}).catch(error => {
+    console.log("Error en la conexion", error)
 });
 
-//Manejo de errores para rutas inexistentes
-app.use((req, res, next) => {
-    res.status(404).send('Ruta no encontrada');
-});
+//Rutas
+const indexRoutes = require('./routes/index.router');
+const usersRoutes = require('./routes/users.router');
+const productRoutes = require('./routes/products.router');
+const cartRoutes = require('./routes/cart-router');
 
-//Manejo de errores generales
-app.use((err, req, res, next) => {
-    console.error(err.stack);
-    res.status(500).send('Hubo un error en el servidor');
-});
+app.use('/', indexRoutes);
+app.use('/', usersRoutes);
+app.use('/', productRoutes);
+app.use('/', cartRoutes);
 
-//Iniciar el servidor
-app.listen(PORT, () => {
-    console.log(`Servidor escuchando en ${PORT}`);
+//Iniciar el servidor 
+http.listen(PORT, () => {
+    console.log("Servidor corriendo correctamente")
 });
