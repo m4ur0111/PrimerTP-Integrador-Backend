@@ -11,12 +11,17 @@ Primer integrador del curso de backend de CoderHouse orientado a la creación de
 Para iniciar sesión hay 2 opciones diferentes, registrar un usuario desde 0 o ingresar con un usuario ya registrado.
 Hay 2 usuarios de ejemplo, aunque en el formulario pueden registrarse los usuarios que se deseen.
 
-<Usuario sin permisos:>.
+Usuario sin permisos:.
 Email: user@gmail.com,
 Pass: userCoderHouse,
-Rol: user,
+Rol: user.
 
-<Usuario con permisos:>.
+Usuario con permisos:.
 Email: admin@gmail.com,
 Pass: adminCoderHouse,
-Rol: admin,
+Rol: admin.
+
+## Información
+Los usuarios con permisos son capaces de agregar productos modificarlos e inhabilitarlos teniendo la opcion de visualización de botones que un usuario común no es capaz de visualizar.
+
+Los archivos json de productos.json y carrito.json en este modelo no tienen uso debido a que pueden ser utilizados con FileSystem si fuera necesario
